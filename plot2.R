@@ -2,14 +2,14 @@
 source("input_data.R")
 
 # Open the PNG device
-plot_filename <- "plot2.png"
-png(filename=plot_filename)
+png(filename="plot2.png", bg="transparent")
 
 # Plot the line graph
-plot(df$DateTime, df$Global_active_power,
-     type="l",
-     ylab="Global Active Power (kilowatts)",
-     xlab="")
+with(df,
+     plot(DateTime, Global_active_power, type="l",
+          ylab="Global Active Power (kilowatts)",
+          xlab="")
+)
 
 # Close the PNG device
 dev.off()
